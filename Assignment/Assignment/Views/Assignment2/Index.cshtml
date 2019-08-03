@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Department>
+
+@using Assignment.Models;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="department container py-4">
+    <table class="table table-bordered text-center">
+        <tr class="bg-dark text-white">
+            <th>Department Name</th>
+        </tr>
+        @foreach (Department department in @Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(department.DeptName, "Details", "Assignment2", new { deptId = department.DeptId }, null)
+                </td>
+            </tr>
+        }
+    </table>
+</div>
