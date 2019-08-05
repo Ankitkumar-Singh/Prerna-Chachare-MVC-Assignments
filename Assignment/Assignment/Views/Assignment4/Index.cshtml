@@ -1,13 +1,14 @@
 ﻿@model IEnumerable<BusinessLayer.Employee>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Assignment4-Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="employees container py-5">
+<div class="employees container py-4">
+    <h2 class="text-center mb-3">Employees</h2>
     <p>
-        @Html.ActionLink("Add New Employee", "Create", "Assignment3", new { @class = "btn btn-success float-right mb-3"})
+        @Html.ActionLink(" Add New Employee", "Create", "Assignment3", new { @class = "fa fa-plus fa-lg text-info float-right mb-3" })
     </p>
     <table class="table table-bordered text-center">
         <tr class="bg-dark text-white">
@@ -35,12 +36,10 @@
                 </td>
                 <td>
                     @Html.ActionLink(" ", "Edit", "Assignment4", new { id = item.ID }, new { @class = "fa fa-edit text-primary mr-3" })
-                    @Html.ActionLink(" ", "Details", "Assignment4", new { id = item.ID }, new { @class = "fa fa-info-circle text-info mr-3" })
-                    @Html.ActionLink(" ", "Delete", "Assignment4", new { id = item.ID }, new { @class = "fa fa-trash text-danger" })
+                    @Html.ActionLink(" ", "Delete", "Assignment4", new { id = item.ID }, new { onclick = "return confirm('Are you sure you want to delete?');" , @class = "fa fa-trash text-danger" })
                 </td>
             </tr>
         }
-
     </table>
 </div>
 

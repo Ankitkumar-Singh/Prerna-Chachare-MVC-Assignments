@@ -8,7 +8,13 @@ namespace BusinessLayer
 {
     public class EmployeeBusinessLayer
     {
-        /// <summary>Gets the employees.</summary>
+        #region "Global Declaration"
+        /// <summary>The connection string</summary>
+        public string connectionString = ConfigurationManager.ConnectionStrings["UserContext"].ConnectionString;
+        #endregion
+
+        #region "Get Employees from Database"
+        /// <summary>Gets the employees details.</summary>
         /// <value>The employees.</value>
         public IEnumerable<Employee> Employees
         {
@@ -38,5 +44,76 @@ namespace BusinessLayer
                 return employees;
             }
         }
+        #endregion
+
+        #region "Add new Employee"
+        /// <summary>Adds the employee.</summary>
+        /// <param name="employee">The employee.</param>
+        public void AddEmployee(Employee employee)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("CRUDOperationsOnEmployees", con))
+                {
+                    cmd.Parameters.AddWithValue("@Action", "INSERT");
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@Name", employee.Name);
+                    cmd.Parameters.AddWithValue("@Gender", employee.Gender);
+                    cmd.Parameters.AddWithValue("@City", employee.City);
+                    cmd.Parameters.AddWithValue("@DateOfBirth", employee.DateOfBirth);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        #endregion
+
+        #region "Update Employee"
+        /// <summary>Updates the employee.</summary>
+        /// <param name="employee">The employee.</param>
+        public void UpdateEmployee(Employee employee)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("CRUDOperationsOnEmployees", con))
+                {
+                    cmd.Parameters.AddWithValue("@Action", "UPDATE");
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@Id", employee.ID);
+                    cmd.Parameters.AddWithValue("@Name", employee.Name);
+                    cmd.Parameters.AddWithValue("@Gender", employee.Gender);
+                    cmd.Parameters.AddWithValue("@City", employee.City);
+                    cmd.Parameters.AddWithValue("@DateOfBirth", employee.DateOfBirth);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        #endregion
+
+        #region "Delete Employee"
+        /// <summary>Deletes the employee.</summary>
+        /// <param name="ID">The identifier.</param>
+        public void DeleteEmployee(int ID)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("CRUDOperationsOnEmployees", con))
+                {
+                    cmd.Parameters.AddWithValue("@Action", "DELETE");
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@Id", ID);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        #endregion
     }
 }
