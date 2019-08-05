@@ -77,6 +77,7 @@ namespace Assignment.Controllers
         /// <summary>Deletes the specified identifier.</summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
+        [HttpPost]
         [ActionName("Delete")]
         public ActionResult Delete(int id)
         {

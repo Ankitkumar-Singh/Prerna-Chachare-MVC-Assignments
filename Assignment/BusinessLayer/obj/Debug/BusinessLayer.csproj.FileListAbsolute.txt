@@ -4,3 +4,9 @@ D:\Prerna-Chachare\.NET MVC Training\Assignment\BusinessLayer\obj\Debug\Business
 D:\Prerna-Chachare\.NET MVC Training\Assignment\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
 D:\Prerna-Chachare\.NET MVC Training\Assignment\BusinessLayer\obj\Debug\BusinessLayer.dll
 D:\Prerna-Chachare\.NET MVC Training\Assignment\BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\Prerna-Chachare\.NET MVC Training\Assignment\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+D:\Prerna-Chachare\.NET MVC Training\Assignment\BusinessLayer\bin\Debug\EntityFramework.dll
+D:\Prerna-Chachare\.NET MVC Training\Assignment\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+D:\Prerna-Chachare\.NET MVC Training\Assignment\BusinessLayer\bin\Debug\EntityFramework.xml
+D:\Prerna-Chachare\.NET MVC Training\Assignment\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+D:\Prerna-Chachare\.NET MVC Training\Assignment\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
