@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BusinessLayer.Employee>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="employees container py-5">
+    <p>
+        @Html.ActionLink("Add New Employee", "Create", "Assignment3", new { @class = "btn btn-success float-right mb-3"})
+    </p>
+    <table class="table table-bordered text-center">
+        <tr class="bg-dark text-white">
+            <th>Name</th>
+            <th>Gender</th>
+            <th>City</th>
+            <th>Date Of Birth</th>
+            <th>Operations</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                </td>
+                <td>
+                    @Html.ActionLink(" ", "Edit", "Assignment4", new { id = item.ID }, new { @class = "fa fa-edit text-primary mr-3" })
+                    @Html.ActionLink(" ", "Details", "Assignment4", new { id = item.ID }, new { @class = "fa fa-info-circle text-info mr-3" })
+                    @Html.ActionLink(" ", "Delete", "Assignment4", new { id = item.ID }, new { @class = "fa fa-trash text-danger" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+

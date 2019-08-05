@@ -95,8 +95,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
     <Content Include="Content\Images\confetti.png" />
     <Content Include="Content\styles.css" />
+    <Content Include="fonts\font-awesome\fa-brands-400.svg" />
+    <Content Include="fonts\font-awesome\fa-regular-400.svg" />
+    <Content Include="fonts\font-awesome\fa-solid-900.svg" />
+    <Content Include="fonts\font-awesome\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -108,19 +113,35 @@
     <Compile Include="Controllers\Assignment1Controller.cs" />
     <Compile Include="Controllers\Assignment2Controller.cs" />
     <Compile Include="Controllers\Assignment3Controller.cs" />
+    <Compile Include="Controllers\Assignment4Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\GuestResponse.cs" />
-    <Compile Include="Models\LoginDetails.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="fonts\font-awesome\fa-brands-400.eot" />
+    <Content Include="fonts\font-awesome\fa-brands-400.ttf" />
+    <Content Include="fonts\font-awesome\fa-brands-400.woff" />
+    <Content Include="fonts\font-awesome\fa-brands-400.woff2" />
+    <Content Include="fonts\font-awesome\fa-regular-400.eot" />
+    <Content Include="fonts\font-awesome\fa-regular-400.ttf" />
+    <Content Include="fonts\font-awesome\fa-regular-400.woff" />
+    <Content Include="fonts\font-awesome\fa-regular-400.woff2" />
+    <Content Include="fonts\font-awesome\fa-solid-900.eot" />
+    <Content Include="fonts\font-awesome\fa-solid-900.ttf" />
+    <Content Include="fonts\font-awesome\fa-solid-900.woff" />
+    <Content Include="fonts\font-awesome\fa-solid-900.woff2" />
+    <Content Include="fonts\font-awesome\fontawesome-webfont.eot" />
+    <Content Include="fonts\font-awesome\fontawesome-webfont.ttf" />
+    <Content Include="fonts\font-awesome\fontawesome-webfont.woff" />
+    <Content Include="fonts\font-awesome\FontAwesome.otf" />
     <None Include="packages.config" />
     <Content Include="Views\Assignment1\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -130,6 +151,8 @@
     <Content Include="Views\Assignment2\Details.cshtml" />
     <Content Include="Views\Assignment2\Index.cshtml" />
     <Content Include="Views\Assignment3\Index.cshtml" />
+    <Content Include="Views\Assignment4\Index.cshtml" />
+    <Content Include="Views\Assignment4\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
