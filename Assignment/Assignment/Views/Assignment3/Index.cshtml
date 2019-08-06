@@ -5,32 +5,32 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="employees container py-4">
+<div class="container py-5 my-5 mx-auto w-75 ">
     <h2 class="text-center mb-5">Employees</h2>
-    <table class="table table-bordered text-center">
-        <tr class="bg-dark text-white">
-            <th>Name</th>
-            <th>Gender</th>
-            <th>City</th>
-            <th>Date Of Birth</th>
-        </tr>
+    <div class="mb-5 py-3">
+        <div class="row bg-dark text-white text-center justify-content-center p-1">
+            <div class="col-md-3 border-right">Name</div>
+            <div class="col-md-3 border-right">Gender</div>
+            <div class="col-md-3 border-right">City</div>
+            <div class="col-md-3">Date Of Birth</div>
+        </div>
 
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
+            <div class="row text-center justify-content-center p-1 border">
+                <div class="col-md-3 border-right">
                     @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
+                </div>
+                <div class="col-md-3 border-right">
                     @Html.DisplayFor(modelItem => item.Gender)
-                </td>
-                <td>
+                </div>
+                <div class="col-md-3 border-right">
                     @Html.DisplayFor(modelItem => item.City)
-                </td>
-                <td>
+                </div>
+                <div class="col-md-3">
                     @Html.DisplayFor(modelItem => item.DateOfBirth)
-                </td>
-            </tr>
+                </div>
+            </div>
         }
-    </table>
+    </div>
 </div>

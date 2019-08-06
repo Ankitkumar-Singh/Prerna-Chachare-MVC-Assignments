@@ -5,8 +5,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="thanks container p-5">
-    <div class="card p-4">
+<div class="thanks container p-5 mt-5">
+    <div class="card p-5 mb-5">
         <div class="text-center">
             @*@{
                     try
@@ -25,7 +25,7 @@
                         @:<b>Sorry - we couldn't send the email to confirm your RSVP.</b>
                     }
                 }*@
-            <h1>Thank you, @Model.Name!</h1>
+            <h1 class="mb-3">Thank you, @Model.Name!</h1>
             <div class="lead">
                 @if (Model.WillAttend == true)
                 {
@@ -36,7 +36,7 @@
                     @:Sorry to hear that you can't make it, but thanks for letting us know.
                 }
             </div>
-            <div class="btn btn-success backToRSVP">
+            <div class="btn btn-success mt-4">
                 @Html.ActionLink("Back to RSVP", "RSVPForm")
             </div>
         </div>

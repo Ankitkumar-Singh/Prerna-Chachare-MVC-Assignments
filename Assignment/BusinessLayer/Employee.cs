@@ -24,6 +24,8 @@ namespace BusinessLayer
         /// <summary>Gets or sets the Employee date of birth.</summary>
         /// <value>The Employee date of birth.</value>
         [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DateOfBirth { get; set; }
         #endregion
     }

@@ -7,18 +7,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="department container py-4">
-    <table class="table table-bordered text-center">
-        <tr class="bg-dark text-white">
-            <th>Department Name</th>
-        </tr>
+<div class="department container py-5 w-75 mx-auto">
+    <div class="text-center pb-2">
+        <div class="bg-dark text-white py-1">
+            <h5>Department List</h5>
+        </div>
         @foreach (Department department in @Model)
         {
-            <tr>
-                <td>
-                    @Html.ActionLink(department.DeptName, "Details", "Assignment2", new { deptId = department.DeptId }, null)
-                </td>
-            </tr>
+            <div class="py-1 border">
+                @Html.ActionLink(department.DeptName, "Details", "Assignment2", new { deptId = department.DeptId }, null)
+            </div>
         }
-    </table>
+    </div>
 </div>

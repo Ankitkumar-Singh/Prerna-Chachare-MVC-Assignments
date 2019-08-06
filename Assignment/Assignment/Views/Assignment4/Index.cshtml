@@ -5,41 +5,48 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="employees container py-4">
+<div class="container py-5 my-4 w-75 mx-auto">
     <h2 class="text-center mb-3">Employees</h2>
-    <p>
-        @Html.ActionLink(" Add New", "Create", "Assignment3", new { @class = "fa fa-plus fa-lg text-info float-right mb-3" })
-    </p>
-    <table class="table table-bordered text-center">
-        <tr class="bg-dark text-white">
-            <th>Name</th>
-            <th>Gender</th>
-            <th>City</th>
-            <th>Date Of Birth</th>
-            <th>Operations</th>
-        </tr>
+    <div class="row py-2 float-right">
+        @Html.ActionLink(" Add New", "Create", "Assignment3", new { @class = "fa fa-plus fa-lg text-info" })
+    </div>
+    <br />
+    <div class="mb-5 pt-4 pb-5">
+        <div class="row bg-dark text-white text-center justify-content-center p-1">
+            <div class="col-md-2 border-right">Name</div>
+            <div class="col-md-2 border-right">Gender</div>
+            <div class="col-md-2 border-right">City</div>
+            <div class="col-md-4 border-right">Date Of Birth</div>
+            <div class="col-md-1 border-right">Edit</div>
+            <div class="col-md-1">Delete</div>
+        </div>
 
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
+            using (Html.BeginForm("Delete", "Assignment4", new { id = item.ID }))
+            {
+            <div class="row text-center justify-content-center p-1 border">
+                <div class="col-md-2 border-right">
                     @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
+                </div>
+                <div class="col-md-2 border-right">
                     @Html.DisplayFor(modelItem => item.Gender)
-                </td>
-                <td>
+                </div>
+                <div class="col-md-2 border-right">
                     @Html.DisplayFor(modelItem => item.City)
-                </td>
-                <td>
+                </div>
+                <div class="col-md-4 border-right">
                     @Html.DisplayFor(modelItem => item.DateOfBirth)
-                </td>
-                <td>
-                    @Html.ActionLink(" ", "Edit", "Assignment4", new { id = item.ID }, new { @class = "fa fa-edit text-primary mr-3" })
-                    @Html.ActionLink(" ", "Delete", "Assignment4", new { id = item.ID }, new { onclick = "return confirm('Are you sure you want to delete?');" , @class = "fa fa-trash text-danger" })
-                </td>
-            </tr>
+                </div>
+                <div class="col-md-1 border-right">
+                    @Html.ActionLink(" ", "Edit", "Assignment4", new { id = item.ID }, new { @class = "fa fa-edit text-primary" })
+                </div>
+                <div class="col-md-1">
+                    <button type="submit" onclick = "return confirm('Are you sure you want to delete?')" class="delete"><i class="fa fa-trash text-danger"></i></button>
+                </div>
+            </div>
+            }
         }
-    </table>
+    </div>
 </div>
 

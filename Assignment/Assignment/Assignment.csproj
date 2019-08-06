@@ -53,6 +53,8 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -103,6 +105,16 @@
     <Content Include="fonts\font-awesome\fa-solid-900.svg" />
     <Content Include="fonts\font-awesome\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Models\UserDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserDataModel.edmx</DependentUpon>
+      <LastGenOutput>UserDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\UserDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserDataModel.edmx</DependentUpon>
+      <LastGenOutput>UserDataModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
@@ -118,10 +130,29 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Department.cs">
+      <DependentUpon>UserDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\GuestResponse.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\User.cs">
+      <DependentUpon>UserDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\UserContext.cs" />
+    <Compile Include="Models\UserDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserDataModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +173,13 @@
     <Content Include="fonts\font-awesome\fontawesome-webfont.ttf" />
     <Content Include="fonts\font-awesome\fontawesome-webfont.woff" />
     <Content Include="fonts\font-awesome\FontAwesome.otf" />
+    <EntityDeploy Include="Models\UserDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UserDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\UserDataModel.edmx.diagram">
+      <DependentUpon>UserDataModel.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Views\Assignment1\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -163,12 +201,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Assignment5\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
       <Project>{cf1c4f04-4bdd-4ad8-9376-5a822cfceda1}</Project>
       <Name>BusinessLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

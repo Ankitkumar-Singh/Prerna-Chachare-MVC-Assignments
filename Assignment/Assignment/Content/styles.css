@@ -7,7 +7,7 @@
 }
 
 .home {
-    padding: 16.5%;
+    padding: 12.2%;
 }
 
 .heading {
@@ -17,41 +17,6 @@
 .partyIcon{
     width: 15%;
     height: 15%;
-}
-
-.thanks {
-    margin: 12.5%;
-}
-
-.details {
-    margin: 8.1%;
-}
-
-.employees {
-    margin: 6%;
-}
-
-.department {
-    margin: 13.8%;
-}
-
-.card {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.btn a,
-.btn a:focus,
-.btn a:hover {
-    color: white;
-    text-decoration: none
-}
-
-.backToRSVP {
-    margin-top: 20px;
-}
-
-.footer {
-    bottom: 0;
 }
 
 .field-validation-error {
@@ -74,4 +39,37 @@
 
 .validation-summary-valid {
     display: none;
+}
+
+.thanks {
+    margin-bottom: 12%;
+}
+
+.card {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.btn a,
+.btn a:focus,
+.btn a:hover {
+    color: white;
+    text-decoration: none
+}
+
+.department {
+    margin-top: 7%;
+    margin-bottom: 22%;
+}
+
+.details {
+    margin-bottom: 14.9%;
+}
+
+.footer {
+    bottom: 0;
+}
+
+.delete {
+    background-color: transparent;
+    border: none;
 }
