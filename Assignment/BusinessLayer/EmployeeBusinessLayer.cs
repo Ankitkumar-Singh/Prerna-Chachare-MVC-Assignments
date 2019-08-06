@@ -20,7 +20,6 @@ namespace BusinessLayer
         {
             get
             {
-                string connectionString = ConfigurationManager.ConnectionStrings["UserContext"].ConnectionString;
                 List<Employee> employees = new List<Employee>();
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
