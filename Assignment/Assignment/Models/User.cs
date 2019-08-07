@@ -9,9 +9,6 @@
 
 namespace Assignment.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
     public partial class User
     {
         public int UserId { get; set; }

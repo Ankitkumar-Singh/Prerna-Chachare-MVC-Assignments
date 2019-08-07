@@ -19,7 +19,7 @@ namespace Assignment.Controllers
                 return RedirectToAction("Index");
             }
             UserContext userContext = new UserContext();
-            List<User> user = userContext.Users.Where(u => u.DeptId == deptId).ToList();
+            List<Users> user = userContext.Users.Where(u => u.DeptId == deptId).ToList();
             return View(user);
         }
         #endregion
@@ -32,7 +32,7 @@ namespace Assignment.Controllers
         public ActionResult Index()
         {
             UserContext userContext = new UserContext();
-            List<Department> department = userContext.Departments.ToList();
+            List<Departments> department = userContext.Departments.ToList();
             return View(department);
         }
         #endregion

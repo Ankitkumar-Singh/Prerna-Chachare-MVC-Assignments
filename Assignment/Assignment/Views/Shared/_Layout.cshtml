@@ -10,7 +10,7 @@
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="navbar navbar-expand-md bg-light navbar-light w-100">
         @Html.ActionLink("MVC", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -26,6 +26,7 @@
                         @Html.ActionLink("Assignment 2", "Index", "Assignment2", new { area = "" }, new { @class = "dropdown-item" })
                         @Html.ActionLink("Assignment 3", "Index", "Assignment3", new { area = "" }, new { @class = "dropdown-item" })
                         @Html.ActionLink("Assignment 4", "Index", "Assignment4", new { area = "" }, new { @class = "dropdown-item" })
+                        @Html.ActionLink("Assignment 5", "Index", "Assignment5", new { area = "" }, new { @class = "dropdown-item" })
                     </div>
                 </li>
             </ul>
@@ -34,7 +35,7 @@
 
     @RenderBody()
 
-    <div class="footer bg-dark text-center py-3 w-100 position-relative">
+    <div class="footer bg-light text-center py-3 w-100 position-fixed">
         <div class="container">
             <span class="text-muted">&copy; @DateTime.Now.Year - Assignment</span>
         </div>

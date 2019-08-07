@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Assignment.Models.User>
+
+@{
+    ViewBag.Title = "Assignment5-Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container py-5 my-4 w-75 mx-auto">
+    <h2 class="text-center mb-3">Employees</h2>
+    <div class="row py-2 px-3 float-right">
+        @Html.ActionLink(" Add New", "Create", "Assignment3", new { @class = "fa fa-plus fa-lg text-info" })
+    </div>
+    <br />
+    <table class="table table-bordered text-center">
+        <tr class="bg-dark text-white">
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department.DeptName)
+            </th>
+            <th>Edit</th>
+            <th>Details</th>
+            <th>Delete</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department.DeptName)
+                </td>
+                <td>
+                    @Html.ActionLink(" ", "Edit", new { id = item.UserId }, new { @class = "fa fa-edit text-primary" })
+                </td>
+                <td>
+                    @Html.ActionLink(" ", "Details", new { id = item.UserId }, new { @class = "fa fa-info-circle text-info" })
+                </td>
+                <td>
+                    @Html.ActionLink(" ", "Delete", new { id = item.UserId }, new { @class = "fa fa-trash text-danger" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

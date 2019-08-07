@@ -9,14 +9,13 @@
 
 namespace Assignment.Models
 {
-    using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class UserLoginEntities : DbContext
+    public partial class UserDetailsContext : DbContext
     {
-        public UserLoginEntities()
-            : base("name=UserLoginEntities")
+        public UserDetailsContext()
+            : base("name=UserDetailsContext")
         {
         }
     

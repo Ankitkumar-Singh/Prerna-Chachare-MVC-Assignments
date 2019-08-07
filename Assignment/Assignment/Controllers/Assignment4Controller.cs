@@ -7,7 +7,7 @@ namespace Assignment.Controllers
 {
     public class Assignment4Controller : Controller
     {
-        #region "Index View to display list of employees"
+        #region "Index View to display list of employees using ADO .NET"
         /// <summary>
         /// View to display user details using ADO .NET
         /// </summary>
@@ -20,7 +20,7 @@ namespace Assignment.Controllers
         }
         #endregion
 
-        #region "Create View to Add a new Employee"
+        #region "Create View to Add a new Employee using ADO .NET"
         /// <summary>Creates this instance.</summary>
         /// <returns></returns>
         [HttpGet]
@@ -45,7 +45,7 @@ namespace Assignment.Controllers
         }
         #endregion
 
-        #region "Edit View to Update Employee"
+        #region "Edit View to Update Employee using ADO .NET"
         /// <summary>Edits the specified identifier.</summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
@@ -73,7 +73,7 @@ namespace Assignment.Controllers
         }
         #endregion
 
-        #region "Delete Action to Delete Employee"
+        #region "Delete Action to Delete Employee using ADO .NET"
         /// <summary>Deletes the specified identifier.</summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>

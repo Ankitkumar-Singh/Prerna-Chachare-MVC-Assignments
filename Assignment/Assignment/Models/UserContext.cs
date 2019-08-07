@@ -8,8 +8,8 @@ namespace Assignment.Models
         /// <summary>
         /// Class to get data of user and department in Dbset
         /// </summary>
-        public DbSet<User> Users { get; set; }
-        public DbSet<Department> Departments { get; set; }
+        public DbSet<Users> Users { get; set; }
+        public DbSet<Departments> Departments { get; set; }
         #endregion
     }
 }

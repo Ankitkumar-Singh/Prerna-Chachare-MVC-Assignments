@@ -126,6 +126,7 @@
     <Compile Include="Controllers\Assignment2Controller.cs" />
     <Compile Include="Controllers\Assignment3Controller.cs" />
     <Compile Include="Controllers\Assignment4Controller.cs" />
+    <Compile Include="Controllers\Assignment5Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -133,6 +134,7 @@
     <Compile Include="Models\Department.cs">
       <DependentUpon>UserDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Departments.cs" />
     <Compile Include="Models\GuestResponse.cs" />
     <Compile Include="Models\User.cs">
       <DependentUpon>UserDataModel.tt</DependentUpon>
@@ -153,6 +155,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserDataModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -186,12 +189,17 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Assignment1\RSVPForm.cshtml" />
     <Content Include="Views\Assignment1\Thanks.cshtml" />
-    <Content Include="Views\Assignment2\Details.cshtml" />
     <Content Include="Views\Assignment2\Index.cshtml" />
     <Content Include="Views\Assignment3\Index.cshtml" />
     <Content Include="Views\Assignment4\Index.cshtml" />
     <Content Include="Views\Assignment4\Create.cshtml" />
     <Content Include="Views\Assignment4\Edit.cshtml" />
+    <Content Include="Views\Assignment2\Details.cshtml" />
+    <Content Include="Views\Assignment5\Create.cshtml" />
+    <Content Include="Views\Assignment5\Delete.cshtml" />
+    <Content Include="Views\Assignment5\Details.cshtml" />
+    <Content Include="Views\Assignment5\Edit.cshtml" />
+    <Content Include="Views\Assignment5\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -201,7 +209,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Assignment5\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">

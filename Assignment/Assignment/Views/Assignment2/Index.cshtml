@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Department>
+﻿@model IEnumerable<Departments>
 
 @using Assignment.Models;
 
@@ -7,12 +7,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="department container py-5 w-75 mx-auto">
+<div class="department container w-75 mx-auto">
     <div class="text-center pb-2">
         <div class="bg-dark text-white py-1">
             <h5>Department List</h5>
         </div>
-        @foreach (Department department in @Model)
+        @foreach (Departments department in @Model)
         {
             <div class="py-1 border">
                 @Html.ActionLink(department.DeptName, "Details", "Assignment2", new { deptId = department.DeptId }, null)
