@@ -21,6 +21,7 @@ namespace Assignment.Models
         }
 
         public int DeptId { get; set; }
+        [Required(ErrorMessage = "Please select your department name")]
         [Display(Name = "Department Name")]
         public string DeptName { get; set; }
     
