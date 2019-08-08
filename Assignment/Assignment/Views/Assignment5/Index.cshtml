@@ -6,57 +6,33 @@
 }
 
 
-<div class="container py-5 my-4 w-75 mx-auto">
+<div class="container mx-auto w-100 py-5 my-5">
     <h2 class="text-center mb-3">Employees</h2>
     <div class="row py-2 px-3 float-right">
         @Html.ActionLink(" Add New", "Create", "Assignment3", new { @class = "fa fa-plus fa-lg text-info" })
     </div>
     <br />
-    <table class="table table-bordered text-center">
-        <tr class="bg-dark text-white">
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.City)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Gender)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Department.DeptName)
-            </th>
-            <th>Edit</th>
-            <th>Details</th>
-            <th>Delete</th>
-        </tr>
-
+    <div class="rTable text-center w-100 mx-auto">
+        <div class="rTableRow bg-dark text-white">
+            <div class="rTableHead"><strong>@Html.DisplayNameFor(model => model.Name)</strong></div>
+            <div class="rTableHead"><strong>@Html.DisplayNameFor(model => model.City)</strong></div>
+            <div class="rTableHead"><strong>@Html.DisplayNameFor(model => model.Gender)</strong></div>
+            <div class="rTableHead"><strong>@Html.DisplayNameFor(model => model.Department.DeptName)</strong></div>
+            <div class="rTableHead"><strong>Edit</strong></div>
+            <div class="rTableHead"><strong>Details</strong></div>
+            <div class="rTableHead"><strong>Delete</strong></div>
+        </div>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.City)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Gender)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Department.DeptName)
-                </td>
-                <td>
-                    @Html.ActionLink(" ", "Edit", new { id = item.UserId }, new { @class = "fa fa-edit text-primary" })
-                </td>
-                <td>
-                    @Html.ActionLink(" ", "Details", new { id = item.UserId }, new { @class = "fa fa-info-circle text-info" })
-                </td>
-                <td>
-                    @Html.ActionLink(" ", "Delete", new { id = item.UserId }, new { @class = "fa fa-trash text-danger" })
-                </td>
-            </tr>
+            <div class="rTableRow">
+                <div class="rTableCell">@Html.DisplayFor(modelItem => item.Name)</div>
+                <div class="rTableCell">@Html.DisplayFor(modelItem => item.City)</div>
+                <div class="rTableCell">@Html.DisplayFor(modelItem => item.Gender)</div>
+                <div class="rTableCell">@Html.DisplayFor(modelItem => item.Department.DeptName)</div>
+                <div class="rTableCell">@Html.ActionLink(" ", "Edit", new { id = item.UserId }, new { @class = "fa fa-edit text-primary" })</div>
+                <div class="rTableCell">@Html.ActionLink(" ", "Details", new { id = item.UserId }, new { @class = "fa fa-info-circle text-info" })</div>
+                <div class="rTableCell">@Html.ActionLink(" ", "Delete", new { id = item.UserId }, new { @class = "fa fa-trash text-danger" })</div>
+            </div>
         }
-
-    </table>
+    </div>
 </div>

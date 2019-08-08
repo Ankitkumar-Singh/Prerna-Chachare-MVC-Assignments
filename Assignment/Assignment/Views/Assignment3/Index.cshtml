@@ -5,31 +5,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container py-5 my-5 mx-auto w-75 ">
+<div class="container mx-auto w-75 py-5 my-5">
     <h2 class="text-center mb-5">Employees</h2>
-    <div class="mb-5 py-3">
-        <div class="row bg-dark text-white text-center justify-content-center p-1">
-            <div class="col-md-3 border-right">Name</div>
-            <div class="col-md-3 border-right">Gender</div>
-            <div class="col-md-3 border-right">City</div>
-            <div class="col-md-3">Date Of Birth</div>
+    <div class="rTable text-center w-75 mx-auto">
+        <div class="rTableRow bg-dark text-white">
+            <div class="rTableHead"><strong>Name</strong></div>
+            <div class="rTableHead"><strong>Gender</strong></div>
+            <div class="rTableHead"><strong>City</strong></div>
+            <div class="rTableHead"><strong>Date Of Birth</strong></div>
         </div>
-
         @foreach (var item in Model)
         {
-            <div class="row text-center justify-content-center p-1 border">
-                <div class="col-md-3 border-right">
-                    @Html.DisplayFor(modelItem => item.Name)
-                </div>
-                <div class="col-md-3 border-right">
-                    @Html.DisplayFor(modelItem => item.Gender)
-                </div>
-                <div class="col-md-3 border-right">
-                    @Html.DisplayFor(modelItem => item.City)
-                </div>
-                <div class="col-md-3">
-                    @Html.DisplayFor(modelItem => item.DateOfBirth)
-                </div>
+            <div class="rTableRow">
+                <div class="rTableCell">@Html.DisplayFor(modelItem => item.Name)</div>
+                <div class="rTableCell">@Html.DisplayFor(modelItem => item.Gender)</div>
+                <div class="rTableCell">@Html.DisplayFor(modelItem => item.City)</div>
+                <div class="rTableCell">@Html.DisplayFor(modelItem => item.DateOfBirth)</div>
             </div>
         }
     </div>

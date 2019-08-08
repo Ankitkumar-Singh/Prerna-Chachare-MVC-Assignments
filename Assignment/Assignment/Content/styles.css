@@ -56,6 +56,20 @@
     padding-top: 12%;
 }
 
+.rTable {
+    display: table;
+}
+
+.rTableRow {
+    display: table-row;
+}
+
+.rTableCell, .rTableHead {
+    display: table-cell;
+    padding: 2px;
+    border: 1px solid #999999;
+}
+		
 .footer {
     bottom: 0;
 }
@@ -79,5 +93,8 @@
     .home {
         min-height: 530px;
         padding: 50% 0;
+    }
+    .rTable {
+        font-size: 14px;
     }
 }
