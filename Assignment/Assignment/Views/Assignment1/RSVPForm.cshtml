@@ -1,0 +1,46 @@
+﻿@model Assignment.Models.GuestResponse
+
+@{
+    ViewBag.Title = "Assignment1-RSVPForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container p-5 my-4">
+    <div class="card my-3">
+        <div class="card-header bg-success text-center">
+            <h3>RSVP</h3>
+        </div>
+        <div class="card-body p-4">
+            @using (Html.BeginForm())
+            {
+                <div class="form-group">
+                    <label>Your name:</label>
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.Name)
+                </div>
+                <div class="form-group">
+                    <label>Your email:</label>
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.Email)
+                </div>
+                <div class="form-group">
+                    <label>Your mobile:</label>
+                    @Html.TextBoxFor(x => x.Mobile, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.Mobile)
+                </div>
+                <div class="form-group">
+                    <label>Will you attend?</label>
+                    @Html.DropDownListFor(x => x.WillAttend, new[] {
+                        new SelectListItem() { Text = "Yes, I'll be there", Value = bool.TrueString },
+                        new SelectListItem() { Text = "No, I can't come", Value = bool.FalseString } },
+                        "Choose an option", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.WillAttend)
+                </div>
+                <div class="text-center mt-4">
+                    <input class="btn btn-success" type="submit" value="Submit RSVP" />
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

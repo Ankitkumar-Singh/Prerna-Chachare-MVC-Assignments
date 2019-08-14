@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Assignment1-Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container h-100 p-5 my-3">
+    <div class="card text-center p-5 my-4">
+        <div class="card-header bg-white border-bottom-0">
+            <h3>@ViewBag.Greeting</h3>
+        </div>
+        <div>
+            <img src="~/Content/Images/confetti.png" class="partyIcon text-center" />
+        </div>
+        <div class="card-body">
+            <h2>We're going to have an exciting party!</h2>
+            <h3>And you are invited</h3>
+        </div>
+        <div class="card-footer bg-white border-top-0">
+            <div class="btn btn-success">
+                @Html.ActionLink("RSVP Now", "RSVPForm")
+            </div>
+        </div>
+    </div>
+</div>  

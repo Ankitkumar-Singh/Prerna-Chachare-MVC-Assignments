@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Assignment.Models.User>
+
+@{
+    ViewBag.Title = "Assignment5-Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container mx-auto w-100 py-5 my-5">
+    <h2 class="text-center mb-3">Employees</h2>
+    <div class="row py-2 px-3 float-right">
+        @Html.ActionLink(" Add New", "Create", "Assignment3", new { @class = "fa fa-plus fa-lg text-info" })
+    </div>
+    <br />
+    <div class="rTable text-center w-100 mx-auto">
+        <div class="rTableRow bg-dark text-white">
+            <div class="rTableHead"><strong>@Html.DisplayNameFor(model => model.Name)</strong></div>
+            <div class="rTableHead"><strong>@Html.DisplayNameFor(model => model.City)</strong></div>
+            <div class="rTableHead"><strong>@Html.DisplayNameFor(model => model.Gender)</strong></div>
+            <div class="rTableHead"><strong>@Html.DisplayNameFor(model => model.Department.DeptName)</strong></div>
+            <div class="rTableHead"><strong>Edit</strong></div>
+            <div class="rTableHead"><strong>Details</strong></div>
+            <div class="rTableHead"><strong>Delete</strong></div>
+        </div>
+        @foreach (var item in Model)
+        {
+            <div class="rTableRow">
+                <div class="rTableCell">@Html.DisplayFor(modelItem => item.Name)</div>
+                <div class="rTableCell">@Html.DisplayFor(modelItem => item.City)</div>
+                <div class="rTableCell">@Html.DisplayFor(modelItem => item.Gender)</div>
+                <div class="rTableCell">@Html.DisplayFor(modelItem => item.Department.DeptName)</div>
+                <div class="rTableCell">@Html.ActionLink(" ", "Edit", new { id = item.UserId }, new { @class = "fa fa-edit text-primary" })</div>
+                <div class="rTableCell">@Html.ActionLink(" ", "Details", new { id = item.UserId }, new { @class = "fa fa-info-circle text-info" })</div>
+                <div class="rTableCell">@Html.ActionLink(" ", "Delete", new { id = item.UserId }, new { @class = "fa fa-trash text-danger" })</div>
+            </div>
+        }
+    </div>
+</div>

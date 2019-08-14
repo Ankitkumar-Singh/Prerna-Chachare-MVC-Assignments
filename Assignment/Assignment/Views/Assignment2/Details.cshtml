@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Assignment.Models.Users>
+
+@using Assignment.Models;
+
+@{
+    ViewBag.Title = "Assignment2-Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mx-auto w-75 py-5 my-5">
+    <h2 class="text-center mb-5">User Details</h2>
+    <div class="rTable text-center w-75 mx-auto">
+        <div class="rTableRow bg-dark text-white">
+            <div class="rTableHead"><strong>Name</strong></div>
+            <div class="rTableHead"><strong>Dept Id</strong></div>
+            <div class="rTableHead"><strong>City</strong></div>
+            <div class="rTableHead"><strong>Gender</strong></div>
+        </div>
+        @foreach (Users user in @Model)
+        {
+            <div class="rTableRow">
+                <div class="rTableCell">@user.Name</div>
+                <div class="rTableCell">@user.DeptId</div>
+                <div class="rTableCell">@user.City</div>
+                <div class="rTableCell">@user.Gender</div>
+            </div>
+        }
+    </div>
+</div>
