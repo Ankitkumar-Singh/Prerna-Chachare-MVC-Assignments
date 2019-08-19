@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="Models.Department" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Models.User" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="Models.FK_dbo_Users_dbo_Departments_DeptId" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Models.userResponse" Width="1.5" PointX="5.375" PointY="1.125" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

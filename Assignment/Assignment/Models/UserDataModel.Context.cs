@@ -9,6 +9,7 @@
 
 namespace Assignment.Models
 {
+    using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
@@ -26,5 +27,6 @@ namespace Assignment.Models
     
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<userResponse> userResponses { get; set; }
     }
 }
