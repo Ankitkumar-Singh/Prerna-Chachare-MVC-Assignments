@@ -53,6 +53,12 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -99,6 +105,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\Images\confetti.png" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\styles.css" />
     <Content Include="fonts\font-awesome\fa-brands-400.svg" />
     <Content Include="fonts\font-awesome\fa-regular-400.svg" />
@@ -117,17 +124,23 @@
     </Content>
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Script.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Common\RemoteClientServer.cs" />
+    <Compile Include="Controllers\Assignment11Controller.cs" />
     <Compile Include="Controllers\Assignment1Controller.cs" />
     <Compile Include="Controllers\Assignment2Controller.cs" />
     <Compile Include="Controllers\Assignment3Controller.cs" />
     <Compile Include="Controllers\Assignment4Controller.cs" />
     <Compile Include="Controllers\Assignment5Controller.cs" />
+    <Compile Include="Controllers\Assignment6Controller.cs" />
     <Compile Include="Controllers\Assignment7Controller.cs" />
+    <Compile Include="Controllers\Assignment9Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -136,6 +149,9 @@
       <DependentUpon>UserDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Departments.cs" />
+    <Compile Include="Models\Employee.cs">
+      <DependentUpon>UserDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\GuestResponse.cs" />
     <Compile Include="Models\User.cs">
       <DependentUpon>UserDataModel.tt</DependentUpon>
@@ -207,6 +223,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Assignment7\Create.cshtml" />
     <Content Include="Views\Assignment7\Index.cshtml" />
+    <Content Include="Views\Assignment6\Index.cshtml" />
+    <Content Include="Views\Shared\_CommentForm.cshtml" />
+    <Content Include="Views\Assignment9\Index.cshtml" />
+    <Content Include="Views\Assignment11\Index.cshtml" />
+    <Content Include="Views\Assignment11\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Assignment.Models.userResponse>
+
+<div class="rTable text-center w-100 mx-auto">
+    <div class="rTableRow bg-dark text-white">
+        <div class="rTableHead"><strong>@Html.DisplayNameFor(model => model.Name)</strong></div>
+        <div class="rTableHead"><strong>@Html.DisplayNameFor(model => model.Comments)</strong></div>
+    </div>
+    @foreach (var item in Model)
+    {
+        <div class="rTableRow">
+            <div class="rTableCell">@Html.DisplayFor(modelItem => item.Name)</div>
+            <div class="rTableCell">@Html.Raw(item.Comments)</div>
+        </div>
+    }
+</div>

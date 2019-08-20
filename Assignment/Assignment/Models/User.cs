@@ -9,20 +9,17 @@
 
 namespace Assignment.Models
 {
-    using System.ComponentModel.DataAnnotations;
-
+    using System;
+    using System.Collections.Generic;
+    
     public partial class User
     {
         public int UserId { get; set; }
-        [Required(ErrorMessage = "Please enter your name")]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Please select your department name")]
         public int DeptId { get; set; }
-        [Required(ErrorMessage = "Please enter your city")]
         public string City { get; set; }
-        [Required(ErrorMessage = "Please select your gender")]
         public string Gender { get; set; }
-
+    
         public virtual Department Department { get; set; }
     }
 }

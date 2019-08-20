@@ -7,16 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.Web.Mvc;
-
 namespace Assignment.Models
-{    
+{
+    using System;
+    using System.Collections.Generic;
+    
     public partial class userResponse
     {
         public int Id { get; set; }
         public string Name { get; set; }
-
-        [AllowHtml]
         public string Comments { get; set; }
     }
 }

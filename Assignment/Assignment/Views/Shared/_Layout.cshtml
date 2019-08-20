@@ -7,7 +7,11 @@
     <link href="~/Content/styles.css" rel="stylesheet" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/font-awesome.css" rel="stylesheet" />
-    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
 </head>
 <body>
     <div class="navbar navbar-expand-md bg-light navbar-light w-100">
@@ -27,7 +31,9 @@
                         @Html.ActionLink("Assignment 3", "Index", "Assignment3", new { area = "" }, new { @class = "dropdown-item" })
                         @Html.ActionLink("Assignment 4", "Index", "Assignment4", new { area = "" }, new { @class = "dropdown-item" })
                         @Html.ActionLink("Assignment 5", "Index", "Assignment5", new { area = "" }, new { @class = "dropdown-item" })
+                        @Html.ActionLink("Assignment 6", "Index", "Assignment6", new { area = "" }, new { @class = "dropdown-item" })
                         @Html.ActionLink("Assignment 7", "Index", "Assignment7", new { area = "" }, new { @class = "dropdown-item" })
+                        @Html.ActionLink("Assignment 9 & 10", "Index", "Assignment9", new { area = "" }, new { @class = "dropdown-item" })
                     </div>
                 </li>
             </ul>
@@ -42,7 +48,5 @@
         </div>
     </div>
 
-    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>

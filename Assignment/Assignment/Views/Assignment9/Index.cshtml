@@ -1,0 +1,47 @@
+﻿@model IPagedList<Assignment.Models.Department>
+@using PagedList.Mvc;
+@using PagedList;
+
+<script src="~/Scripts/Script.js"></script>
+
+<div class="container mx-auto w-100 py-5 my-5">
+    <h2 class="text-center mb-3">Employees</h2>
+    <div class="row mb-3">
+        <div class="col-sm-6 col-xs-6 col-md-6">
+            <div class="search-container">
+                @using (@Html.BeginForm("Index", "Assignment9", FormMethod.Get, htmlAttributes: new { @class = "mt-3" }))
+                {
+                    <div class="form-inline">
+                        <text class="font-weight-bold mr-2">Search:</text>
+                        @Html.TextBox("Search", null, new { placeholder = "Search", @class = "form-control w-75 mr-2" })
+                        <button type="submit" class="btn btn-search btn-info"><i class="fa fa-search"></i></button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    @using (Html.BeginForm("Delete", "Assignment9", FormMethod.Post))
+    {
+        <input type="submit" value="Delete selected departments" class="btn btn-danger float-right mb-3" />
+        <div class="rTable w-100 mx-auto">
+            <div class="rTableRow bg-dark text-white links">
+                <div class="rTableHead"><input type="checkbox" name="checkAll" id="checkAll" class="mr-3" /><strong>Select All</strong></div>
+                <div class="rTableHead"><strong>@Html.ActionLink("Department Name", "Index", new { sortBy = ViewBag.DeptNameSort, search = Request["search"] })</strong></div>
+                <div class="rTableHead"><strong>@Html.ActionLink("Department Location", "Index", new { sortBy = ViewBag.DeptLocationSort, search = Request["search"] })</strong></div>
+                <div class="rTableHead"><strong>@Html.DisplayNameFor(model => model.First().EmployeeCount)</strong></div>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="rTableRow">
+                    <div class="rTableCell"><input type="checkbox" name="departmentIdsToDelete" id="departmentIdsToDelete" value="@item.DeptId" /></div>
+                    <div class="rTableCell">@Html.DisplayFor(modelItem => item.DeptName)</div>
+                    <div class="rTableCell">@Html.DisplayFor(model => item.DeptLocation)</div>
+                    <div class="rTableCell">@Html.DisplayFor(modelItem => item.EmployeeCount)</div>
+                </div>
+            }
+        </div>
+    }
+    <div class="btn btn-group-lg w-100">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, search = Request.QueryString["search"], sortBy = Request["sortBy"] }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true, LiElementClasses = new string[] { "page-item pagecount" } })
+    </div>
+</div>

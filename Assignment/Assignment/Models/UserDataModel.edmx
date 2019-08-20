@@ -11,6 +11,19 @@
           </Key>
           <Property Name="DeptId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DeptName" Type="nvarchar(max)" />
+          <Property Name="DeptLocation" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeCount" Type="int" />
+        </EntityType>
+        <EntityType Name="tblEmployee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="10" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="userResponse">
           <Key>
@@ -46,6 +59,7 @@
         </Association>
         <EntityContainer Name="ModelsStoreContainer">
           <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblEmployee" EntityType="Self.tblEmployee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="userResponse" EntityType="Self.userResponse" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_dbo_Users_dbo_Departments_DeptId" Association="Self.FK_dbo_Users_dbo_Departments_DeptId">
@@ -64,6 +78,8 @@
           <Property Name="DeptId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DeptName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Users_dbo_Departments_DeptId" FromRole="Departments" ToRole="Users" />
+          <Property Name="DeptLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeCount" Type="Int32" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -98,6 +114,7 @@
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
           <EntitySet Name="userResponses" EntityType="Models.userResponse" />
+          <EntitySet Name="Employees" EntityType="Models.Employee" />
         </EntityContainer>
         <EntityType Name="userResponse">
           <Key>
@@ -106,6 +123,17 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Comments" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -116,6 +144,8 @@
           <EntitySetMapping Name="Departments">
             <EntityTypeMapping TypeName="Models.Department">
               <MappingFragment StoreEntitySet="Departments">
+                <ScalarProperty Name="EmployeeCount" ColumnName="EmployeeCount" />
+                <ScalarProperty Name="DeptLocation" ColumnName="DeptLocation" />
                 <ScalarProperty Name="DeptId" ColumnName="DeptId" />
                 <ScalarProperty Name="DeptName" ColumnName="DeptName" />
               </MappingFragment>
@@ -136,6 +166,18 @@
             <EntityTypeMapping TypeName="Models.userResponse">
               <MappingFragment StoreEntitySet="userResponse">
                 <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="Models.Employee">
+              <MappingFragment StoreEntitySet="tblEmployee">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>

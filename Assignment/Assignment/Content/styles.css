@@ -45,9 +45,9 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.btn a,
-.btn a:focus,
-.btn a:hover {
+.links a,
+.links a:focus,
+.links a:hover {
     color: white;
     text-decoration: none
 }
@@ -68,6 +68,7 @@
     display: table-cell;
     padding: 2px;
     border: 1px solid #999999;
+    padding: 5px 15px;
 }
 		
 .footer {
