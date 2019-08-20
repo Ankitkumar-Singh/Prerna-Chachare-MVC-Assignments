@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.ComponentModel.DataAnnotations;
-
 namespace Assignment.Models
 {
+    using System.ComponentModel.DataAnnotations;
+
     public partial class User
     {
         public int UserId { get; set; }
@@ -22,7 +22,7 @@ namespace Assignment.Models
         public string City { get; set; }
         [Required(ErrorMessage = "Please select your gender")]
         public string Gender { get; set; }
-    
+
         public virtual Department Department { get; set; }
     }
 }

@@ -23,6 +23,8 @@ namespace Assignment.Controllers
         #endregion
 
         #region "Add a new comment"
+        /// <summary>Creates this instance.</summary>
+        /// <returns></returns>
         public ActionResult Create()
         {
             return View();
@@ -56,7 +58,9 @@ namespace Assignment.Controllers
         }
         #endregion
 
-
+        #region "Dispose"
+        /// <summary>Releases unmanaged resources and optionally releases managed resources.</summary>
+        /// <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -65,5 +69,6 @@ namespace Assignment.Controllers
             }
             base.Dispose(disposing);
         }
+        #endregion
     }
 }
