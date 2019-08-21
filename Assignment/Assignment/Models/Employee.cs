@@ -12,7 +12,6 @@ namespace Assignment.Models
     using MVCDemo.Common;
     using System;
     using System.ComponentModel.DataAnnotations;
-    using System.Web.Mvc;
 
     public partial class Employee
     {
@@ -28,6 +27,7 @@ namespace Assignment.Models
         public string City { get; set; }
 
         [Required(ErrorMessage = "Date of Birth is required")]
+        [DataType(DataType.Date)]
         [Display(Name = "Date of Birth")]
         public Nullable<System.DateTime> DateOfBirth { get; set; }
 

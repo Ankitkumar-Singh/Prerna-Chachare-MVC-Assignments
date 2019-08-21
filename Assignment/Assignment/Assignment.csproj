@@ -142,6 +142,7 @@
     <Compile Include="Controllers\Assignment7Controller.cs" />
     <Compile Include="Controllers\Assignment9Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="TableHelper\TableHelper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

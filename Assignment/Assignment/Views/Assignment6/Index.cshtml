@@ -1,1 +1,8 @@
-﻿@model IEnumerable<BusinessLayer.Employee>
+﻿@model IEnumerable<Assignment.Models.Employee>
+
+@using Assignment.TableHelper
+
+<div class="container mx-auto w-100 py-5 my-5">
+    <h2 class="text-center mb-3">Employees</h2>
+    @Html.Table(new List<Assignment.Models.Employee>(Model), "table")
+</div>
